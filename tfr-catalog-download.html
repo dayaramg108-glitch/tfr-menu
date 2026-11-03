@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="hi"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>TFR | The Food Republic: Menu Catalog</title>
+<style>
+:root{--bg:#fbfbf7;--card:#fff;--tx:#17201a;--mut:#667068;--ac:#1f7a45;--ln:#e3e6df;--chk:#17201a;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#101411;--card:#18201a;--tx:#eef2ec;--mut:#9aa69c;--ac:#5cc986;--ln:#26302a;--chk:#eef2ec;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#101411;--card:#18201a;--tx:#eef2ec;--mut:#9aa69c;--ac:#5cc986;--ln:#26302a;--chk:#eef2ec;color-scheme:dark}
+*{box-sizing:border-box}html{scroll-padding-top:120px}
+body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.4 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+.top{height:14px;background:repeating-conic-gradient(var(--chk) 0 25%,transparent 0 50%) 0 0/28px 28px}
+header{padding:16px 16px 8px}
+h1{margin:0;font:700 26px/1.1 Georgia,serif}
+.sub{margin:4px 0 0;color:var(--mut);font-size:14px}
+.veg{display:inline-block;border:1.5px solid var(--ac);color:var(--ac);border-radius:4px;padding:0 6px;font-size:12px;font-weight:700;margin-right:6px}
+.bar{position:sticky;top:env(safe-area-inset-top,0px);background:var(--bg);padding:8px 16px;z-index:5;border-bottom:1px solid var(--ln)}
+input{width:100%;padding:10px 12px;border:1px solid var(--ln);border-radius:8px;background:var(--card);color:var(--tx);font:inherit}
+.chips{display:flex;gap:8px;overflow-x:auto;padding-top:8px}
+.chips button{flex:none;border:1px solid var(--ln);background:var(--card);color:var(--tx);border-radius:16px;padding:5px 12px;font:inherit;font-size:14px}
+main{padding:0 16px 40px}
+section{margin-top:22px}
+h2{margin:0;font:700 20px/1.2 Georgia,serif;border-left:4px solid var(--ac);padding-left:10px}
+.note{margin:2px 0 0 14px;color:var(--mut);font-size:13px}
+.it{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px solid var(--ln)}
+.it b{font-weight:500}.p{font-weight:700;white-space:nowrap}.q{color:var(--mut);font-weight:400;font-size:13px}
+footer{padding:0 16px 32px;color:var(--mut);font-size:13px}
+.wm{position:fixed;inset:0;z-index:20;pointer-events:none;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='170'%3E%3Ctext x='130' y='85' text-anchor='middle' font-family='Georgia,serif' font-weight='700' font-size='21' letter-spacing='3' fill='%23888' fill-opacity='.26' transform='rotate(-28 130 85)'%3EMOHIT DESIGNS%3C/text%3E%3C/svg%3E")}
+.wm{position:fixed;inset:0;pointer-events:none;z-index:99;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='280' height='200'%3E%3Ctext x='140' y='100' text-anchor='middle' transform='rotate(-30 140 100)' font-family='Georgia,serif' font-weight='700' font-size='24' fill='%23888' fill-opacity='.22'%3EMOHIT DESIGNS%3C/text%3E%3C/svg%3E")}
+</style></head><body><div class="wm"></div>
+<div class="wm"></div><div class="top"></div>
+<header><h1>TFR | The Food Republic</h1>
+<p class="sub"><span class="veg">VEG</span>by Inderlok, Moti Doongri, Alwar</p>
+<p class="sub">Call: 095889 22762</p></header>
+<div class="bar"><input id="s" type="search" placeholder="Item khojo: pizza, shake, paneer…"><div class="chips" id="ch"></div></div>
+<main id="m"></main>
+<footer>Sample catalog, prices menu photos se liye gaye hain. 5% GST extra. Sample by Mohit Designs.</footer>
+<script>
+var D=[
+["Chaat-Wala","","Golgappe (6 pc)|40;Aloo Tikki|80;Aloo Tikki with Chole|115;Aloo Tikki with Dahi|130;Aloo Tikki Chole & Dahi|150;Lachha Tikki|120;Dahi Bhalla|125;Bhalla Papdi Chaat|130;Papdi Laccha Tikki|120;Raj Kachori|140;Sev Puri|90;Bhel Puri|80;Dahi Puri|120;Chole Bhature|160;Pav Bhaji|150;Mix Chaat|150;Dabeli|130;Plain Dosa|199;Masala Dosa|225;Rava Masala Dosa|250;Paneer Masala Dosa|265;Pizza Dosa|225;Mattar Kulche|135;Amritsari Kulche|150;Veg Uttapam|120;Idli Sambhar|120;Masala Idli|135;Samosa Chutney|90;Cheese Samosa|120;Plain Chilla|125;Masala Chilla|145;Paneer Chilla|165;Mumbai Vada Pav|125;Karara Palak Chaat|145;Ragda Pattice|120"],
+["Starters","Halka-Fulka","Roasted Papad (2 pc)|60;Masala Papad (2 pc)|120;Dahi Ke Sholey|225;Hara Bhara Kabab|225;Dahi Kabab|235;Fried Kaju|349;Peanuts Masala|165;Fried Aloo Chaat|160;Bingo Chaat|120;Veg Pakora (10 pc)|180;Paneer Pakora (6 pc)|220"],
+["Tandoori Snacks","4 se 6 PM ke beech available nahi","Paneer Tikka|275;Paneer Pudhin|285;Achari Tikka|285;Paneer Malai Tikka|295;Spicy Soya Chaap|220;Afgani Chaap|260;Tandoori Aalo|225;Mushroom Tikka|265;Tandoori Platter|395"],
+["Fries & Nachos","","French Fries|169;Masala Fries|179;Cheese Load Fries|199;Peri-Peri Fries|179;Crispy Nachos|159;Cheese Loaded Nachos|199"],
+["Maggie","","Masala Maggie|119;Cheese Maggie|129;Paneer Maggie|139;Veg Paneer Cheese Maggie|159;Exotic Vegetable Maggie|179"],
+["Chinese","","Chilly Honey Potato|225;Chilly Honey Babycorn|245;Chinese Bhel|199;Crispy Vegetable|225;Crispy Baby Corn|225;Spring Roll|220;Veg Salt & Pepper|220;American Salt & Pepper|239;Mushroom Salt & Pepper|245;Crispy Corn (American Corn)|225;Veg Chowmein|200;Hakka Noodles|225;Chilly Garlic Noodles|225;Singapuri Noodles|245;Schezwan Noodles|245;Chilly Paneer (Dry/Gravy)|245/255;Chilly Mushroom (Dry/Gravy)|235/245;Veg Manchurian (Dry/Gravy)|245/255;Paneer Manchurian (Dry/Gravy)|275/285;Veg Fried Rice|210;Chinese Platter|395"],
+["Sizzlers","Banne me kam se kam 20 minute","Chinese Sizzler|395;Tandoori Sizzler|425;Veg Shashlik Sizzler|395;Paneer Shashlik Sizzler|425"],
+["Mexican","","Veg Tacos|149;Cheese Loaded Tacos|179;Desi Tacos|189;Quesadilla|219;Veg Burrito|169;Cheese Loaded Burrito|199;Desi Burrito|209"],
+["Pizza","","Plain Cheese Pizza|245;Margherita Pizza|285;Cheese Corn Pizza|295;Gardenia Pizza|360;Mexican Pizza|325;Paneer Tikka Pizza|369;Tandoori Mushroom Pizza|369;Farmhouse Pizza|380;Chef’s Special Pizza|425;Extra Cheese|59;Extra Vegetable|39;Extra Mushrooms|49;Extra Olives|39"],
+["Pasta","","Arrabbiata Pasta|275;Alfredo Pasta|290;Pink Rose Pasta|325;Pesto Veg Pasta|295;Ravioli Pasta|335;Baked Cheese Pasta|355;Cheese Macaroni Pasta|275;Daal Makhni Pasta|335;Aglio Olio Pasta|?;Baked Vegetable|385;Baked Spinach|375;Lasagna|399"],
+["Burgers & Garlic Bread","Purani menu photo, price confirm karna","Veg Burger|89;Cheese Veg Burger|109;Garlic Veg Burger|119;Mexican Burger|119;Paneer Burger|139;Mushroom Burger|139;Jumbo Burger|149;Spicy Fries Burger|159;Triple Story Burger|199;Nachos Burger|159;Cheese Fries Burger|179;Plain Garlic Bread|89;Mexican Garlic Bread|109;Cheese Garlic Mushroom|129;Veg Garlic Bread|149"],
+["Sandwich & Wraps","Purani menu photo, price confirm karna","Veggie Delight Sub|139;Cheese Loaded Sub|159;Mexican Sub|159;Desi Grilled Sub|189;Paneer Tikka Sub|199;Hot Tandoori Sub|199;Vegetable Sandwich|99;Plain Cheese Sandwich|119;Garden Grilled Sandwich|129;Paneer Tikka Sandwich|149;Cheese Corn Sandwich|139;Spicy Mexican Sandwich|129;Maggi Sandwich|159;Desi Grilled Sandwich|179;Pizza Sandwich|199;Veg Wrap|109;Veg Corn Wrap|119;Paneer Wrap|119;Paneer Cheese Wrap|129;Fully Loaded Wrap|129"],
+["Daal & Raita","","Daal Fry|250;Daal Tadka|280;Daal Makhani|295;Vegetable Raita|175;Pineapple Raita|195;Boondi Raita|175;Fruit Raita|225"],
+["Paneer & Sabzi","","Kadhai Paneer|345;Paneer Labadar|365;Butter Paneer Masala|335;Handi Paneer|345;Shahi Paneer|375;Paneer Amritsari|375;Malai Kofta|345;Mix Vegetable|295;Soya Chaap Masala|325;Chana Masala|295;Mushroom Masala|345;Dum Aloo Bhojpuri|315;Kadhai Chaap|345"],
+["Breads & Rice","","Plain Tandoori Roti|30;Butter Tandoori Roti|35;Missi Roti|55;Hari Mirch Ki Roti|65;Plain Naan|80;Butter Naan|95;Garlic Naan|125;Stuffed Naan|135;Laccha Paratha|95;Stuffed Paratha|125;Onion Masala Kulcha|125;Assorted Bread Basket|650;Jeera Rice|199;Veg Biryani Hyderabadi|350"],
+["Soups","","Tomato Soup|160;Hot & Sour Soup|165;Tomato Basil Soup|165;Sweet Corn Soup|160;Lemon Coriander Soup|150;Manchow Soup|160;Broccoli Soup|180;Bell Pepper Soup|180;Minestrone Soup|180;Veg Clear Soup|150;Mushroom Soup|160"],
+["Salads","","Fresh Green Salad|140;Kachumbar Salad|140;Lachha Onion Salad|125;Plain Onion Salad|110;Russian / Tossed Salad|180;Pasta Salad|180;Sprouts Salad|150;Fruit Salad|200;Boiled Vegetables|275"],
+["Chai & Hot Coffee","","Masala Chai|69;Adrak Chai|79;Elaichi Chai|89;Kesar Chai|99;Green Tea|79;Herbal Tea|89;Black Tea|79;Lemon Masala Tea|79;Easy Espresso|65;Macchiato|79;Cappuccino|99;Café Latte|109;Choco Chino|119;Café Mocha|129;Grand Mug|139;Black Coffee|99;Hot Chocolate|149;Irish Coffee|139"],
+["Coffee Add-ons","","Irish / Hazelnut / Caramel|30;Cinnamon / Tiramisu / Whipped Cream|35;Chocolate Syrup / Cookies|30;Ice Cream|40;Espresso (Strong)|50"],
+["Shakes","","Vanilla Shake|109;Banana Shake|109;Orange Shake|109;Butter Scotch Shake|119;Strawberry Shake|119;Chocolate Shake|129;Kiwi Shake|129;Kit-Kat Shake|129;Bubblegum Shake|129;Mango Shake|129;Black Currant Shake|129;Litchi Shake|129;Oreo Shake|139;Pomegranate Shake|139;Paan Shake|149;Fruit Punch Shake|149;Pineapple Shake|149;Choco Mint Shake|149;Choco Chip Shake|159;Belgium Chocolate Shake|169;Nutella Shake|169;Choco Caramel Shake|169;Choco Oreo Shake|169;Oreo Mint Shake|169;Brownie Shake|179;Ferrero Rocher Shake|199"],
+["Smoothies & Cold Coffee","","Kiwi Smoothy|129;Banana Smoothy|129;Strawberry Smoothy|139;Mango Smoothy|139;Choco Hazelnut Smoothy|149;Blue Berry Smoothy|149;Espresso Tonic|89;Iced Caramel|119;Iced Americano|119;Iced Latte|129;Iced Mocha|129;Cappachillo|109;Mochachillo|119;Vegan Shake|119;Café Frappé|139;Almond Frappé|149;Choco Frappé|159;Devils Own|169"],
+["Ice-Tea & Mocktails","","Lemon Ice-Tea|109;Mint Ice-Tea|119;Peach Ice-Tea|129;Watermelon Ice-Tea|129;Cranberry Ice-Tea|129;Honey Ice-Tea|129;Guava Ice-Tea|159;Red Bull Ice-Tea|169;Monster Ice-Tea|179;Lemonde|129;Green Apple|139;Fresh Virgin Mojito|139;Mint Strawberry Mojito|149;Spicy Virgin Mojito|149;Kiwi Mojito|149;Blue Thunder|149;Watermelon Mojito|149;Sunset Colour|159;Sunny Sungaria|159;Pina Colada|159;Florida Punch|159;Mango Mint|169;Spicy Guava|169;Fruit Punch|225"],
+["Refreshments","","Fresh Lime Water (Sweet/Salted)|99;Fresh Lime Soda (Sweet/Salted)|119;Pudhina Neebu Jaljeera|119;Lassi Salted|90;Lassi Sweet|110;Masala Butter Milk|80;Readymade Tea|45"],
+["Bakery & Desserts","Desserts ke kuch price photo me saaf nahi the","Chocolate Pastry|100;Belgian Truffle Pastry|135;Chocolate Cupcakes|80;Vanilla Cupcakes|75;Chocolate Donuts|80;Vanilla Donuts|75;Brownie|110;Chocolate Cake|550;Belgian Truffle Cake|800;Gulab Jamun (2 pc)|?;Gulab Jamun with Rabri|?;Moong Ka Halwa|?;Ice Cream (2 scoop)|120;Sizzling Brownie|180;Sizzling Brownie with Ice Cream|220"]
+];
+var m=document.getElementById('m'),ch=document.getElementById('ch'),s=document.getElementById('s');
+function esc(t){return t.replace(/&/g,'&amp;').replace(/</g,'&lt;')}
+D.forEach(function(c,i){
+ var h='<h2>'+esc(c[0])+'</h2>'+(c[1]?'<p class="note">'+esc(c[1])+'</p>':'');
+ c[2].split(';').forEach(function(x){var a=x.split('|');h+='<div class="it"><b>'+esc(a[0])+'</b><span class="p">'+(a[1]=='?'?'<span class="q">price confirm</span>':'₹'+a[1])+'</span></div>'});
+ var e=document.createElement('section');e.id='c'+i;e.innerHTML=h;m.appendChild(e);
+ var b=document.createElement('button');b.textContent=c[0];b.onclick=function(){e.scrollIntoView({behavior:'smooth'})};ch.appendChild(b);
+});
+s.oninput=function(){var q=s.value.toLowerCase();document.querySelectorAll('section').forEach(function(e){var any=false;e.querySelectorAll('.it').forEach(function(r){var ok=r.textContent.toLowerCase().indexOf(q)>-1;r.style.display=ok?'':'none';if(ok)any=true});e.style.display=any?'':'none'})};
+</script></body></html>
